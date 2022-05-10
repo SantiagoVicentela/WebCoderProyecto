@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+
+{% block titulo %}
+    <title>fail</title>
+{% endblock %}
+
+
+{% block body %}
+    {% if error %}
+        <h3>{{mensaje}}</h3>
+        <a href={% url 'login' %}>regresar al login</a>
+    {% endif %}
+
+{% endblock %}

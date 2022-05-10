@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block titulo %}
+    <title>lista de Libros</title>
+{% endblock %}
+
+
+{% block body %}
+    <br>
+    <a href={% url 'index' %}>Regresar a la lista</a>
+
+    <form action={% url 'buscar_libro' %} method='GET'> {% csrf_token %}
+      <p>Título: 
+        <input type='text' name='titulo' id='titulo'>
+      </p>
+        <input class="button" type='submit' value="Buscar por título"> 
+    </form>
+    
+    {% if libros %}
+      {% for libro in libros %}
+        <p>{{libro.tituloautor}} - {{libro.descripcion}}</p> 
+      {% endfor %}
+    {% else %}
+      <p>{{respuesta}}</p>
+    {% endif %}
+
+
+{% endblock %}

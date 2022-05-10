@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block titulo %}
+    <title>info de usuario</title>
+{% endblock %}
+
+
+{% block body %}
+    <p> Usuario: {{user.username}} </p>
+    <p> Nombre: {{user.first_name}} </p>
+    <p> Apellido: {{user.last_name}} </p>
+    <p> Correo: {{user.email}} </p>
+
+    <ul>
+        <li style='display:inline-block'><a href={% url 'logout' %}>cerrar sesión</a></li>
+        <li style='display:inline-block'><a href={% url 'editar' %}>editar usuario</a></li>
+    </ul>
+
+
+{% endblock %}

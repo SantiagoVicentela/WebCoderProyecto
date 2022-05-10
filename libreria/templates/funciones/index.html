@@ -1,0 +1,16 @@
+% extends 'base.html' %}
+
+
+{% block titulo %}
+    <title>Libros</title>
+{% endblock %}
+
+
+{% block body %}
+    <div>
+        {% if mensaje is not None %}
+            <h3>{{mensaje}}</h3>
+        {% endif %}
+    </div>
+
+{% endblock %}
